@@ -18,7 +18,7 @@ body { padding: 0; margin: 0; overflow: hidden; height: 100%; }
 <script>
 const map = new maplibregl.Map({
   container: document.body,
-  style: 'https://optgeo.github.io/optbv-intl/optbv-intl-dev.json',
+  style: 'https://optgeo.github.io/nagi-vi/style-maplibre.json',
   hash: true,
   attributionControl: false
 })
@@ -32,7 +32,6 @@ map.on('load', () => {
   const layer = new MapboxLayer({
     id: '3d',
     type: Tile3DLayer,
-    pointSize: 2,
     data: url,
     loader: Tiles3DLoader,
   })
