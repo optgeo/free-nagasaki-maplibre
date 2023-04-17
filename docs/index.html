@@ -5,7 +5,6 @@
 <script src="https://unpkg.com/maplibre-gl@2.4.0/dist/maplibre-gl.js"></script>
 <script src="https://unpkg.com/deck.gl@latest/dist.min.js"></script>
 <script src="https://unpkg.com/@loaders.gl/3d-tiles@^2.3.0/dist/dist.min.js"></script>
-<!-- <script type="module" src="https://unpkg.com/@math.gl/core@3.6.3/dist/es5/index.js"></script> -->
 <link href="https://unpkg.com/maplibre-gl@2.4.0/dist/maplibre-gl.css" rel="stylesheet"></link>
 <style>
 #cesiumContainer { position: absolute; top: 0; left: 0; height: 100%; width: 100%; margin: 0; 
@@ -43,17 +42,8 @@ map.on('load', () => {
       }
     },
     onTilesetLoad: (tileset) => {
-      const { cartographicCenter } = tileset
-      console.log(cartographicCenter)
     },
     onTileLoad: (header) => {
-      /*
-      header.content.cartographicOrigin = new Vector3(
-        header.content.cartographicOrigin.x,
-        header.content.cartographicOrigin.y,
-        header.content.cartographicOrigin.z + 40
-      )
-      */
     }
   })
   map.addLayer(layer)
