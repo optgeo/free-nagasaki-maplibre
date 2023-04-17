@@ -33,9 +33,24 @@ map.on('load', () => {
   const layer = new MapboxLayer({
     id: '3d',
     type: Tile3DLayer,
-    pointSize: 1,
+    pointSize: 1.0,
+    opacity: 0.8,
     data: url,
     loader: Tiles3DLoader,
+    loadOptions: {
+      viewDistanceScale: 0.7
+    },
+    onTilesetLoad: (tileset) => {
+      const { cartographicCenter } = tileset
+      console.log(cartographicCenter)
+    },
+    onTileLoad: (header) => {
+      header.content.cartographicOrigin = new Vector3(
+        header.content.cartographicOrigin.x,
+        header.content.cartographicOrigin.y,
+        header.content.cartographicOrigin.z + 40
+      )
+    }
   })
   map.addLayer(layer)
 })
