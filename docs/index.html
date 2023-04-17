@@ -34,13 +34,13 @@ map.on('load', () => {
   const layer = new MapboxLayer({
     id: '3d',
     type: Tile3DLayer,
-    pointSize: 1.0,
+    pointSize: 1.4,
     opacity: 0.8,
     data: url,
     loader: Tiles3DLoader,
     loadOptions: {
       tileset: {
-        viewDistanceScale: 0.7
+        viewDistanceScale: 0.8
       }
     },
     onTilesetLoad: (tileset) => {
